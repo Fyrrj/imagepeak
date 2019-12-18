@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900|Lato:400,900&display=swap&subset=latin-ext");
+
+html {
+  font-size: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainAppContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #0d203b;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.cloud {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -238px;
+  width: 238px;
+  height: 238px;
+  animation: moveRight 20s linear 2s infinite;
 }
 
-@keyframes App-logo-spin {
+@keyframes moveRight {
   from {
-    transform: rotate(0deg);
+    left: -238px;
   }
   to {
-    transform: rotate(360deg);
+    left: 100%;
   }
 }
+
+/*font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'Lato', sans-serif;*/
