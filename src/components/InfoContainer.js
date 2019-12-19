@@ -5,6 +5,8 @@ import BrowseCardLogo from "../img/photos.png";
 import RateCardLogo from "../img/like.png";
 import AddCardLogo from "../img/camera.png";
 import ClimbCardLogo from "../img/podium.png";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "../Infocontainer.css";
 
 const InfoContainer = props => {
