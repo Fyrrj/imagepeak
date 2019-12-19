@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../Registercontainer.css";
 import FormLogo from "../img/snowed-mountains.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
 
 class RegisterCotainer extends Component {
   state = {};
@@ -38,6 +40,7 @@ class RegisterCotainer extends Component {
         </article>
         <article className="haveAnAccountContainer">
           <p className="haveAccount">
+            <FontAwesomeIcon icon={faSnowflake} className="snowFlakeIco" />
             Have an account ?{" "}
             <a href="#" className="loginHref">
               Log in

@@ -14,16 +14,24 @@ p.terms {
 p.firstAdnotation {
   padding: 10px 20px;
   text-align: justify;
-  font-size: 24px;
+  font-size: 22px;
+  color: #2c8ffa;
 }
 
 p.haveAccount {
   font-size: 22px;
   font-weight: 300;
+  padding: 6px 10px;
 }
 
 .formImg {
   width: 100px;
+}
+
+.snowFlakeIco {
+  color: #0d203b;
+  margin-right: 10px;
+  font-size: 2.5rem;
 }
 
 .loginHref {
@@ -60,7 +68,7 @@ p.haveAccount {
   align-items: center;
   height: 10%;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: #fff;
 }
 

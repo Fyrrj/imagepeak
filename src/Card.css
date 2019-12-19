@@ -5,10 +5,16 @@
   align-items: center;
   width: 150px;
   height: 180px;
-  background-color: #2c8ffa;
+  background-color: #0d203b;
   margin: 20px;
   border: 2px solid #fff;
   border-radius: 8px;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.card:hover {
+  background-color: #2c8ffa;
 }
 
 .cardImage {

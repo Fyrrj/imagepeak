@@ -35,9 +35,9 @@ html {
   position: absolute;
   top: -10px;
   left: -238px;
-  width: 200px;
-  height: 200px;
-  animation: moveRight 20s linear 2s infinite;
+  width: 220px;
+  height: 220px;
+  animation: moveRight 30s linear infinite;
 }
 
 @keyframes moveRight {

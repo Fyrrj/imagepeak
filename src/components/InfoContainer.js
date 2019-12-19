@@ -5,6 +5,7 @@ import BrowseCardLogo from "../img/photos.png";
 import RateCardLogo from "../img/like.png";
 import AddCardLogo from "../img/camera.png";
 import ClimbCardLogo from "../img/podium.png";
+import mountainBgc from "../img/mountain.svg";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "../Infocontainer.css";
@@ -12,6 +13,11 @@ import "../Infocontainer.css";
 const InfoContainer = props => {
   return (
     <header className="leftContainer">
+      <img
+        src={mountainBgc}
+        className="infoContainerBgc"
+        alt="background"
+      ></img>
       <section className="siteNameSection">
         <img src={Logo} alt="logo" className="mainLogo"></img>
         <h1>Imagepeak</h1>
