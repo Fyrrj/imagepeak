@@ -15,11 +15,12 @@ import DefaultAvatar from "../img/avatar.png";
 const AfterLogin = props => {
   return (
     <div className="afterLoginContainer">
-      <nav>
+      <nav className="afterLoginNav">
         <div className="logoBox">
           <img src={Logo} alt="logo"></img>
           <h1>
-            Image<span className="colorChanger">peak</span>
+            Image
+            <span className="colorChanger">peak</span>
           </h1>
         </div>
         <div className="navigationBtnsBox">
