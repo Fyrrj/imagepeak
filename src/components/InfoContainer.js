@@ -6,9 +6,7 @@ import RateCardLogo from "../img/like.png";
 import AddCardLogo from "../img/camera.png";
 import ClimbCardLogo from "../img/podium.png";
 import mountainBgc from "../img/mountain.svg";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import "../Infocontainer.css";
+import "../css/Infocontainer.css";
 
 const InfoContainer = props => {
   return (

@@ -5,7 +5,7 @@ class Avatar extends Component {
     return (
       <div className="avatarBox">
         <img src={this.props.userAvatar} alt="avatar"></img>
-        <p className="welcomeMsg">Hello {this.props.userName} !</p>
+        <p className="welcomeMsg">{this.props.userName}</p>
       </div>
     );
   }

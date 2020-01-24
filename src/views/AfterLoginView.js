@@ -6,7 +6,7 @@ import Logout from "../components/Logout";
 import Slider from "../components/Slider";
 import Logo from "../img/logo.png";
 import ImageModal from "../components/ImageModal";
-import "../Afterlogin.css";
+import "../css/Afterlogin.css";
 import NavLogo1 from "../img/album.png";
 import NavLogo2 from "../img/ranking.png";
 import NavLogo3 from "../img/settings.png";

@@ -4,7 +4,7 @@ import NotificationPanel from "../components/NotificationPanel";
 import Avatar from "../components/Avatar";
 import Logout from "../components/Logout";
 import Logo from "../img/logo.png";
-import "../Myalbum.css";
+import "../css/Myalbum.css";
 import NavLogo1 from "../img/album.png";
 import NavLogo2 from "../img/ranking.png";
 import NavLogo3 from "../img/settings.png";

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import LandingView from "./views/LandingView";
 import AfterLoginView from "./views/AfterLoginView";
-import "./Landing.css";
+import "../src/css/Landing.css";
 import MyAlbumView from "./views/MyAlbumView";
+import RankingView from "./views/RankingView";
 
 class App extends Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <MyAlbumView />
+        <RankingView />
       </>
     );
   }

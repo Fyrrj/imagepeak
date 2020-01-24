@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Registercontainer.css";
+import "../css/Registercontainer.css";
 import FormLogo from "../img/snowed-mountains.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
