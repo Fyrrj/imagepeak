@@ -70,6 +70,7 @@ font-family: 'Lato', sans-serif;*/
 
 .myAlbumContainer .navBtn:hover {
   background-color: #fff;
+  border-top-right-radius: 40px;
 }
 
 .navBtn > img {
@@ -131,13 +132,14 @@ font-family: 'Lato', sans-serif;*/
   align-items: center;
 }
 
-.avatarBox > img {
-  height: 60px;
+.myAlbumContainer .avatarBox > img {
+  height: 70px;
 }
 
 .welcomeMsg {
   margin-left: 20px;
   color: #2c8ffa;
+  font-weight: 700;
 }
 
 .myAlbumContainer .logoutBtn {

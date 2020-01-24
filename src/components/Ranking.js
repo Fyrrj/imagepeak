@@ -5,6 +5,23 @@ const Ranking = () => {
   return (
     <div className="rankingRecords">
       <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
+      <RankingRecord />
     </div>
   );
 };

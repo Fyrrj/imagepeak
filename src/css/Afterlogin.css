@@ -72,6 +72,7 @@
 
 .afterLoginContainer .navBtn:hover {
   background-color: #0d203b;
+  border-top-right-radius: 40px;
 }
 
 .afterLoginContainer .navBtn > img {
@@ -128,12 +129,13 @@
   align-items: center;
 }
 
-.avatarBox > img {
-  height: 80px;
+.afterLoginContainer .avatarBox > img {
+  height: 70px;
 }
 
 .welcomeMsg {
   color: #2c8ffa;
+  font-weight: 700;
 }
 
 .afterLoginContainer .logoutBtn {
