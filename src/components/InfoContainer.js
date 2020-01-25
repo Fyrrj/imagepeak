@@ -7,6 +7,7 @@ import AddCardLogo from "../img/camera.png";
 import ClimbCardLogo from "../img/podium.png";
 import mountainBgc from "../img/mountain.svg";
 import "../css/Infocontainer.css";
+import { Link } from "react-router-dom";
 
 const InfoContainer = props => {
   return (
@@ -18,8 +19,12 @@ const InfoContainer = props => {
       ></img>
       <section className="siteNameSection">
         <img src={Logo} alt="logo" className="mainLogo"></img>
-        <h1>Imagepeak</h1>
-        <h2>Mountain of photos</h2>
+        <Link to="/">
+          <h1>
+            Image<span className="colorChanger">peak</span>
+          </h1>
+          <h2>Mountain of photos</h2>
+        </Link>
       </section>
       <section className="cardsAboutSiteSection">
         <Card cardTitle="browse" cardImage={BrowseCardLogo} />

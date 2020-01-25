@@ -11,6 +11,17 @@ p {
   margin: 0;
 }
 
+h1 > span.colorChanger {
+  font-weight: 700;
+  color: #2c8ffa;
+}
+
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
 body,
 html {
   margin: 0;

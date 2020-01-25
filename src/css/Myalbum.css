@@ -55,6 +55,10 @@ font-family: 'Lato', sans-serif;*/
   flex: 4;
 }
 
+.navigationBtnsBox > a {
+  height: 100%;
+}
+
 .myAlbumContainer .navBtn {
   height: 100%;
   display: flex;
@@ -64,8 +68,9 @@ font-family: 'Lato', sans-serif;*/
   border: none;
   background-color: #0d203b;
   cursor: pointer;
-  padding: 0 10px;
+  padding: 0 20px;
   transition: 0.3s;
+  outline: none;
 }
 
 .myAlbumContainer .navBtn:hover {
@@ -133,13 +138,15 @@ font-family: 'Lato', sans-serif;*/
 }
 
 .myAlbumContainer .avatarBox > img {
-  height: 70px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 50%;
 }
 
-.welcomeMsg {
-  margin-left: 20px;
+.myAlbumContainer .avatarBox .welcomeMsg {
   color: #2c8ffa;
   font-weight: 700;
+  margin-left: 10px;
 }
 
 .myAlbumContainer .logoutBtn {
@@ -150,6 +157,7 @@ font-family: 'Lato', sans-serif;*/
   border-radius: 4px;
   transition: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 .logoutBtn:hover {
   background-color: #fff;

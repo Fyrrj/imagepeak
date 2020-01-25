@@ -10,6 +10,7 @@ import NavLogo2 from "../img/ranking.png";
 import NavLogo3 from "../img/settings.png";
 import DefaultAvatar from "../img/avatar.png";
 import Album from "../components/Album";
+import { Link } from "react-router-dom";
 
 const MyAlbumView = props => {
   return (
@@ -17,19 +18,30 @@ const MyAlbumView = props => {
       <nav>
         <div className="logoBox">
           <img src={Logo} alt="logo"></img>
-          <h1>
-            Image<span className="colorChanger">peak</span>
-          </h1>
+          <Link to="/welcome">
+            <h1>
+              Image
+              <span className="colorChanger">peak</span>
+            </h1>
+          </Link>
         </div>
         <div className="navigationBtnsBox">
-          <Navbtn buttonImg={NavLogo1} content="my album" />
-          <Navbtn buttonImg={NavLogo2} content="ranking" />
-          <Navbtn buttonImg={NavLogo3} content="account" />
+          <Link to="/myalbum">
+            <Navbtn buttonImg={NavLogo1} content="my album" />
+          </Link>
+          <Link to="/ranking">
+            <Navbtn buttonImg={NavLogo2} content="ranking" />
+          </Link>
+          <Link to="account">
+            <Navbtn buttonImg={NavLogo3} content="account" />
+          </Link>
         </div>
         <div className="userAccountBox">
           <NotificationPanel />
           <Avatar userAvatar={DefaultAvatar} userName="Fyrr" />
-          <Logout />
+          <Link to="/">
+            <Logout />
+          </Link>
         </div>
       </nav>
       <header>

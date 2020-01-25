@@ -15,7 +15,7 @@
   background-color: #fff;
   width: 100%;
   height: 100px;
-  padding: 0 40px;
+  padding: 0 60px;
 }
 
 .logoBox {
@@ -63,6 +63,7 @@
   cursor: pointer;
   padding: 0 20px;
   transition: 0.3s;
+  outline: none;
 }
 
 .afterLoginContainer .navBtn > p {
@@ -130,12 +131,15 @@
 }
 
 .afterLoginContainer .avatarBox > img {
-  height: 70px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  height: 60px;
 }
 
-.welcomeMsg {
+.afterLoginContainer .avatarBox .welcomeMsg {
   color: #2c8ffa;
   font-weight: 700;
+  margin-left: 10px;
 }
 
 .afterLoginContainer .logoutBtn {
@@ -146,6 +150,7 @@
   border-radius: 4px;
   transition: 0.3s;
   cursor: pointer;
+  outline: none;
 }
 .afterLoginContainer .logoutBtn:hover {
   border-color: #0d203b;
@@ -268,7 +273,7 @@
 }
 
 .anotherUserAvatar > img {
-  height: 50%;
+  height: 50px;
 }
 
 h2.userNameInfo {

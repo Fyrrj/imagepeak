@@ -37,6 +37,9 @@ p.haveAccount {
 .loginHref {
   color: #2c8ffa;
   font-weight: bold;
+  cursor: pointer;
+  padding: 4px 8px;
+  text-decoration: underline;
 }
 
 .registerContainer {
@@ -59,6 +62,8 @@ p.haveAccount {
   height: 90%;
   padding: 10px;
   background-color: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .haveAnAccountContainer {
@@ -70,6 +75,9 @@ p.haveAccount {
   width: 100%;
   margin-top: 20px;
   background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px 0;
 }
 
 .formContainer {

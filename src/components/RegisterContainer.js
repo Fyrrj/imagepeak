@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 import "../css/Registercontainer.css";
 import FormLogo from "../img/snowed-mountains.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSnowflake } from "@fortawesome/free-solid-svg-icons";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class RegisterCotainer extends Component {
   state = {};
@@ -16,19 +20,12 @@ class RegisterCotainer extends Component {
             <strong>add</strong> and <strong>climb</strong> with your photos.
           </p>
           <form className="formContainer">
-            <input placeholder="Username..." className="formInput"></input>
-            <input placeholder="Email..." className="formInput"></input>
-            <input
-              placeholder="Password..."
-              className="formInput"
-              type="password"
-            ></input>
-            <input
-              placeholder="Repeat password..."
-              className="formInput"
-              type="password"
-            ></input>
-            <button className="signUpBtn">Sign up</button>
+            <Router>
+              <Switch>
+                <Route path="/" exact component={RegisterForm} />
+                <Route path="/login" component={LoginForm} />
+              </Switch>
+            </Router>
           </form>
           <p className="terms">
             By signing up, you agree to our <strong>Terms</strong>. Learn how we
@@ -41,11 +38,11 @@ class RegisterCotainer extends Component {
         <article className="haveAnAccountContainer">
           <p className="haveAccount">
             <FontAwesomeIcon icon={faSnowflake} className="snowFlakeIco" />
-            Have an account ?{" "}
-            <a href="#" className="loginHref">
-              Log in
-            </a>
+            Have an account ?
           </p>
+          <Link to="/login">
+            <p className="loginHref">Log in</p>
+          </Link>
         </article>
       </aside>
     );

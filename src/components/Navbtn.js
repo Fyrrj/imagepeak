@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class Navbtn extends Component {
-  state = {};
   render() {
     return (
       <button className="navBtn">
