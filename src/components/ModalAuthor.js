@@ -7,6 +7,7 @@ class ModalAuthor extends Component {
     anotherUserName: "Matheview",
     anotherUserAvatar: DefaultAvatar
   };
+
   render() {
     return (
       <>

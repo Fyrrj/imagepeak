@@ -19,21 +19,12 @@ class RegisterCotainer extends Component {
             Sign up to <strong>browse</strong>, <strong>rate</strong>,{" "}
             <strong>add</strong> and <strong>climb</strong> with your photos.
           </p>
-          <form className="formContainer">
-            <Router>
-              <Switch>
-                <Route path="/" exact component={RegisterForm} />
-                <Route path="/login" component={LoginForm} />
-              </Switch>
-            </Router>
-          </form>
-          <p className="terms">
-            By signing up, you agree to our <strong>Terms</strong>. Learn how we
-            collect, use and share your data in our{" "}
-            <strong>Data Policy </strong>
-            and how we use cookies and similar technology in our{" "}
-            <strong>Cookies Policy</strong>.
-          </p>
+          <Router>
+            <Switch>
+              <Route path="/" exact component={RegisterForm} />
+              <Route path="/login" component={LoginForm} />
+            </Switch>
+          </Router>
         </article>
         <article className="haveAnAccountContainer">
           <p className="haveAccount">
