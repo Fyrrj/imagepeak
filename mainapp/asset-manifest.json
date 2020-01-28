@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ecd8c062.chunk.css",
+    "main.js": "/static/js/main.074c262e.chunk.js",
+    "main.js.map": "/static/js/main.074c262e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.aab1ee48.js",
+    "runtime-main.js.map": "/static/js/runtime-main.aab1ee48.js.map",
+    "static/js/2.18ccf82e.chunk.js": "/static/js/2.18ccf82e.chunk.js",
+    "static/js/2.18ccf82e.chunk.js.map": "/static/js/2.18ccf82e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e4658488d36eced7a7e32b9fa0d7fdc2.js": "/precache-manifest.e4658488d36eced7a7e32b9fa0d7fdc2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ecd8c062.chunk.css.map": "/static/css/main.ecd8c062.chunk.css.map",
+    "static/js/2.18ccf82e.chunk.js.LICENSE": "/static/js/2.18ccf82e.chunk.js.LICENSE",
+    "static/media/defaultAvatar.png": "/static/media/defaultAvatar.0a498df7.png",
+    "static/media/mountain.svg": "/static/media/mountain.5f7f62c1.svg",
+    "static/media/photo1.jpg": "/static/media/photo1.8a358acf.jpg",
+    "static/media/photo2.jpg": "/static/media/photo2.451415c0.jpg",
+    "static/media/photo3.jpg": "/static/media/photo3.e01116c5.jpg",
+    "static/media/photo4.jpg": "/static/media/photo4.7b0de535.jpg",
+    "static/media/photo5.jpg": "/static/media/photo5.606c0310.jpg",
+    "static/media/photo6.jpg": "/static/media/photo6.16aa5cba.jpg",
+    "static/media/photo7.jpg": "/static/media/photo7.86f71b9e.jpg",
+    "static/media/photo8.jpg": "/static/media/photo8.b6da9583.jpg",
+    "static/media/photo9.jpg": "/static/media/photo9.d521a4b6.jpg",
+    "static/media/photos.png": "/static/media/photos.80b04a8f.png",
+    "static/media/snowed-mountains.png": "/static/media/snowed-mountains.34588195.png",
+    "static/media/staticimg.jpg": "/static/media/staticimg.a110a940.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aab1ee48.js",
+    "static/js/2.18ccf82e.chunk.js",
+    "static/css/main.ecd8c062.chunk.css",
+    "static/js/main.074c262e.chunk.js"
+  ]
+}
