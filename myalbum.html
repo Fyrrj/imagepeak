@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/styles/signin.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Lato:300,400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <title>Imagepeak</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <nav>
+          <div class="nav-content">
+            <div class="logotype">
+              <img src="/img/logo.png" alt="site logotype" class="logo" />
+              <h1>Image<span>peak</span></h1>
+            </div>
+            <div class="navigation-section">
+              <ul>
+                <li>
+                  <i class="fas fa-portrait"></i><a href="myalbum">my album</a>
+                </li>
+                <li>
+                  <i class="fas fa-medal"></i><a href="ranking">ranking</a>
+                </li>
+                <li>
+                  <i class="fas fa-user-cog"></i><a href="account">account</a>
+                </li>
+              </ul>
+            </div>
+            <div class="user-section">
+              <div class="avatar-container">
+                <img
+                  src="/img/defaultAvatar.png"
+                  alt="user-avatar"
+                  class="user-avatar"
+                />
+              </div>
+              <p class="user-name">Noname</p>
+              <div class="notifications">
+                <i class="fas fa-bell"></i>
+                <div class="notification-count"><p>1</p></div>
+              </div>
+              <div class="logout-btn">
+                <button>
+                  <a href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <header>
+            <div class="albumBox">
+                <div className="addPictureArea">
+                  <button class="addBtn">
+                    add new photo
+                  </button>
+                </div>
+                <div class="picturesContainer">
+                  <div class="picturesColumn">
+                    <img src="img/photo1.jpg" alt="album"></img>
+                    <img src="img/photo2.jpg" alt="album"></img>
+                    <img src="img/photo3.jpg" alt="album"></img>
+                  </div>
+                  <div class="picturesColumn">
+                    <img src="img/photo4.jpg" alt="album"></img>
+                    <img src="img/photo5.jpg" alt="album"></img>
+                    <img src="img/photo6.jpg" alt="album"></img>
+                  </div>
+                  <div class="picturesColumn">
+                    <img src="img/photo7.jpg" alt="album"></img>
+                    <img src="img/photo8.jpg" alt="album"></img>
+                    <img src="img/photo9.jpg" alt="album"></img>
+                  </div>
+                </div>
+              </div>
+        </header>
+      </main>
+    </div>
+    <script src="/scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4904b4dc8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

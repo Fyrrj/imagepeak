@@ -242,6 +242,151 @@ main header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: calc(100% - 100px);
+}
+
+header > .public-gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.public-gallery .image-slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  border: 2px solid #2c8ffa;
+}
+
+.image-slider > img {
+  height: 100%;
+}
+
+.image-slider .rate-bar {
+  position: absolute;
+  bottom: -50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 100px;
+  width: 100%;
+}
+
+.rate-bar .rate-btn.plus-one-btn {
+  font-size: 2.5rem;
+  margin-right: 80px;
+}
+
+.rate-bar .rate-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-style: none;
+  background-color: #fff;
+  color: #2c8ffa;
+  border: 2px solid #2c8ffa;
+  font-size: 3rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.rate-bar .rate-btn:hover {
+  background-color: #0d203b;
+}
+
+.public-gallery .image-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22%;
+  height: 35%;
+  background-color: #0d203b;
+  border: 2px solid #2c8ffa;
+}
+
+header {
+  box-sizing: border-box;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+  overflow-y: scroll;
+  width: 100%;
+  background-color: #fff;
+}
+
+.albumBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.addPictureArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  margin: 40px 0;
+}
+
+.picturesContainer {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.picturesColumn {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-right: 1.45rem;
+}
+
+.picturesColumn > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.45rem;
+}
+
+.addBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid #2c8ffa;
+  border-radius: 4px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 2rem;
+  background-color: #fff;
+  color: #2c8ffa;
+  transition: 0.3s;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.addBtn:hover {
+  background-color: #2c8ffa;
+  color: #fff;
 }
