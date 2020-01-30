@@ -56,8 +56,14 @@ main {
   height: 50%;
 }
 
+.left-section .logotype-box .logo-anchor {
+  text-decoration: none;
+  text-align: center;
+}
+
 .left-section img.logo {
   width: 230px;
+  margin-bottom: 40px;
 }
 
 .left-section .services-box {
@@ -164,6 +170,30 @@ p {
   background-color: #fff;
   border-radius: 8px;
   padding: 10px;
+}
+
+#registerContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#registerContainer.active {
+  display: none;
+}
+
+#loginContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#loginContainer.active {
+  display: none;
 }
 
 .right-section .join-container .have-account {
@@ -277,16 +307,25 @@ form button.signup-button:hover {
   font-weight: 700;
 }
 
-a.signin-anchor {
+.right-section .join-container .have-account p.signin-anchor {
   font-family: "Alegreya Sans SC", sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #2c8ffa;
   text-align: center;
   transition: 0.3s;
+  cursor: pointer;
 }
 
-a.signin-anchor:hover {
+.right-section .join-container .have-account p.signin-anchor:hover {
   color: #0d203b;
   letter-spacing: 2px;
+}
+
+#errorField {
+  font-family: "Lato", sans-serif;
+  color: red;
+  font-size: 1.6rem;
+  padding: 0 10px;
+  text-align: center;
 }

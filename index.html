@@ -18,8 +18,10 @@
         <section class="left-section">
           <div class="logotype-box">
             <img src="/img/logo.png" alt="site logotype" class="logo" />
-            <h1>Image<span class="color-changer">peak</span></h1>
-            <h2>Mountain of photos</h2>
+            <a href="index.html" class="logo-anchor">
+              <h1>Image<span class="color-changer">peak</span></h1>
+              <h2>Mountain of photos</h2>
+            </a>
           </div>
           <div class="services-box">
             <div class="card">
@@ -44,25 +46,50 @@
         <section class="right-section">
           <div class="join-container">
             <div class="form-container">
-              <i class="fas fa-mountain"></i>
-              <h3>Sign up to browse, rate, and climb with your photos.</h3>
-              <form action="">
-                <input type="text" placeholder="Username..." />
-                <input type="email" placeholder="Email..." />
-                <input type="password" placeholder="Password..." />
-                <label>
-                  <input type="checkbox" />
-                  I accept all terms.
-                </label>
-                <button class="signup-button">Signup</button>
-              </form>
-              <p class="terms-paragraph">
-                By signing up, you agree to our <a href="#">Terms</a>.
-              </p>
+              <div id="registerContainer">
+                <i class="fas fa-mountain"></i>
+                <div id="errorField"></div>
+                <h3>Sign up to browse, rate, and climb with your photos.</h3>
+                <form action="welcome.html" method="GET" id="registerForm">
+                  <input type="text" placeholder="Username..." id="username" />
+                  <input type="email" placeholder="Email..." id="email" />
+                  <input
+                    type="password"
+                    placeholder="Password..."
+                    id="password"
+                  />
+                  <label>
+                    <input type="checkbox" id="check" checked />
+                    I accept all terms.
+                  </label>
+                  <button class="signup-button">Signup</button>
+                </form>
+                <p class="terms-paragraph">
+                  By signing up, you agree to our <a href="#">Terms</a>.
+                </p>
+              </div>
+              <div id="loginContainer" class="active">
+                <i class="fas fa-mountain"></i>
+                <div id="errorField"></div>
+                <h3>
+                  Sign in to browse, rate, and climb with your photos.
+                  <br />
+                  <br />Join our community today.
+                </h3>
+                <form action="welcome.html" method="GET" id="registerForm">
+                  <input type="email" placeholder="Email..." id="email" />
+                  <input
+                    type="password"
+                    placeholder="Password..."
+                    id="password"
+                  />
+                  <button class="signup-button">Signin</button>
+                </form>
+              </div>
             </div>
             <div class="have-account">
               <p>Have an accout ?</p>
-              <a class="signin-anchor" href="#">sign in</a>
+              <p class="signin-anchor" id="switcher">sign in</p>
             </div>
           </div>
         </section>
