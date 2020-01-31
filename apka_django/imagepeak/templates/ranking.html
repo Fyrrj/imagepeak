@@ -39,11 +39,11 @@
             </div>
             <div class="user-section">
               <div class="avatar-container">
-                <img
-                  src="/static/img/defaultAvatar.png"
-                  alt="user-avatar"
-                  class="user-avatar"
-                />
+                  <img
+                    src={{ request.COOKIES.user_image }}
+                    alt="user-avatar"
+                    class="user-avatar"
+                  />
               </div>
               <p class="user-name">{{ request.COOKIES.nickname }}</p>
               <div class="logout-btn">
@@ -62,7 +62,7 @@
               <div class="ranking-record">
                 <div class="other-user-place">{{ value.pos }}</div>
                 <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
+                  <img src="{{ value.image }}" alt="" />
                 <p class="other-user-name">{{ key }}</p>
                 </div>
               <div class="other-user-ranking-score">{{ value.val }}</div>
