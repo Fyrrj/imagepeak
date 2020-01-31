@@ -43,7 +43,7 @@ const errorField = document.getElementById("errorField");
 
 passwordChangeForm.addEventListener("submit", e => {
   let messages = [];
-  if (newPassword.value != repeatPassword) {
+  if (newPassword.value != repeatPassword.value) {
     messages.push("Repeat your password correctly");
   }
 
