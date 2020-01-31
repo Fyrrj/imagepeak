@@ -7,6 +7,7 @@ from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.csrf import csrf_exempt
 from main.models import User, Posts, Tags, Rating
+from django.db.models import Count
 from datetime import datetime
 import dateutil.relativedelta
 
@@ -33,7 +34,26 @@ def ranking(request):
     if 'nickname' not in request.COOKIES or 'id' not in request.COOKIES:
         return redirect('/main')
     else:
-        return render(request, "ranking.html")
+        position = 1
+        col = {}
+        rate = Rating.objects.all().annotate(total=Count('post_id_id'))
+        for i in rate:
+            pst = Posts.objects.get(id=i.post_id_id)
+            usr = User.objects.get(id=pst.user_id_id)
+            if usr.nickname not in col:
+                col[usr.nickname] = i.total
+            else:
+                col[usr.nickname] += i.total
+        sort = {k: v for k, v in sorted(col.items(), key=lambda item: item[1], reverse=True)}
+        col = {}
+        for key, value in sort.items():
+            if position < 10:
+                col[key] = {'pos': position, 'val': value}
+                position += 1
+            else:
+                break
+        print(col)
+        return render(request, "ranking.html", {'col': col})
 
 
 @csrf_exempt
