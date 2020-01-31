@@ -38,7 +38,7 @@
             <div class="user-section">
               <div class="avatar-container">
                 <img
-                  src="/static/img/defaultAvatar.png"
+                  src={{ request.COOKIES.user_image }}
                   alt="user-avatar"
                   class="user-avatar"
                 />
@@ -56,11 +56,16 @@
         </nav>
         <header>
             <div class="albumBox">
-                <div className="addPictureArea">
-                  <button class="addBtn">
-                    add new photo
-                  </button>
+              <div className="addPictureArea">
+                <!--Tutaj Mati zobacz czy ci pasi-->
+               <form action="myalbum" method="POST" enctype="multipart/form-data" class="add-photo-form">
+                <div class="file-upload">
+                  <input class="file-upload__input" type="file" name="myFile" id="myFile" accept="image/*" multiple >
+                  <!-- <button class="file-upload__button" type="button">Choose File(s)</button> -->
+                  <span class="file-upload__label"></span>
+                  <button type="submit" name="submit" class="add-photo-btn active" id="submitFileBtn">add new photo</button>
                 </div>
+               </form>
                 <div class="picturesContainer">
                   {% for col in paths %}
                   <div class="picturesColumn">
