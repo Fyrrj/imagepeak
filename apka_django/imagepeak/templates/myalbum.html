@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/static/styles/signin.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Lato:300,400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <title>Imagepeak</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <nav>
+          <div class="nav-content">
+            <div class="logotype">
+              <img src="/static/img/logo.png" alt="site logotype" class="logo" />
+              <a href="welcome" class="logo-anchor">
+              <h1>Image<span>peak</span></h1>
+            </a>
+            </div>
+            <div class="navigation-section">
+              <ul>
+                <li>
+                  <i class="fas fa-portrait"></i><a href="myalbum">my album</a>
+                </li>
+                <li>
+                  <i class="fas fa-medal"></i><a href="ranking">ranking</a>
+                </li>
+                <li>
+                  <i class="fas fa-user-cog"></i><a href="usersettings">account</a>
+                </li>
+              </ul>
+            </div>
+            <div class="user-section">
+              <div class="avatar-container">
+                <img
+                  src="/static/img/defaultAvatar.png"
+                  alt="user-avatar"
+                  class="user-avatar"
+                />
+              </div>
+              <p class="user-name">{{ request.COOKIES.nickname }}</p>
+              <div class="logout-btn">
+                <button>
+                  <a href="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <header>
+            <div class="albumBox">
+                <div className="addPictureArea">
+                  <button class="addBtn">
+                    add new photo
+                  </button>
+                </div>
+                <div class="picturesContainer">
+                  {% for col in paths %}
+                  <div class="picturesColumn">
+                  {% for img in col %}
+
+                    <img src="/static/img/{{ request.COOKIES.id }}/{{ img }}" alt="album"></img>
+                    <!-- <img src="/static/img/1/photo2.jpg" alt="album"></img>
+                    <img src="/static/img/1/photo3.jpg" alt="album"></img> -->
+                    {% endfor %}
+                  </div>
+                  {% endfor %}
+                  <!-- <div class="picturesColumn">
+                    <img src="/static/img/1/photo4.jpg" alt="album"></img>
+                    <img src="/static/img/1/photo5.jpg" alt="album"></img>
+                    <img src="/static/img/1/photo6.jpg" alt="album"></img>
+                  </div>
+                  <div class="picturesColumn">
+                    <img src="/static/img/1/photo7.jpg" alt="album"></img>
+                    <img src="/static/img/1/photo8.jpg" alt="album"></img>
+                    <img src="/static/img/1/photo9.jpg" alt="album"></img>
+                  </div> -->
+                </div>
+              </div>
+        </header>
+      </main>
+    </div>
+    <script src="/static/scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4904b4dc8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

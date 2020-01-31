@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/static/styles/signin.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Lato:300,400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <title>Imagepeak</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <nav>
+          <div class="nav-content">
+            <div class="logotype">
+              <img src="/static/img/logo.png" alt="site logotype" class="logo" />
+              <a href="welcome" class="logo-anchor"
+                ><h1>Image<span>peak</span></h1></a
+              >
+            </div>
+            <div class="navigation-section">
+              <ul>
+                <li>
+                  <i class="fas fa-portrait"></i
+                  ><a href="myalbum">my album</a>
+                </li>
+                <li>
+                  <i class="fas fa-medal"></i><a href="ranking">ranking</a>
+                </li>
+                <li>
+                  <i class="fas fa-user-cog"></i
+                  ><a href="usersettings">account</a>
+                </li>
+              </ul>
+            </div>
+            <div class="user-section">
+              <div class="avatar-container">
+                <img
+                  src="/static/img/defaultAvatar.png"
+                  alt="user-avatar"
+                  class="user-avatar"
+                />
+              </div>
+              <p class="user-name">{{ requests.COOKIES.nickname }}</p>
+              <div class="logout-btn">
+                <button>
+                  <a href="logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <header>
+          <div class="ranking-records">
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Edyta</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Kornelia</p>
+              </div>
+              <div class="other-user-ranking-score">2341</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Janusz</p>
+              </div>
+              <div class="other-user-ranking-score">444</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Mateusz</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Norbert</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Dawid</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Edyta</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Edyta</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+            <div class="ranking-record">
+              <div class="other-user-place">1</div>
+              <div class="other-user-info">
+                <img src="/static/img/avatar.png" alt="" />
+                <p class="other-user-name">Edyta</p>
+              </div>
+              <div class="other-user-ranking-score">7834</div>
+            </div>
+          </div>
+        </header>
+      </main>
+    </div>
+    <script src="/static/scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4904b4dc8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

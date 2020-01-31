@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/static/styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Lato:300,400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <title>Imagepeak</title>
+  </head>
+  {% block body %}
+  <body>
+    <div class="wrap">
+      <main>
+        <img src="" alt="" />
+        <section class="left-section">
+          <div class="logotype-box">
+            <img src="/static/img/logo.png" alt="site logotype" class="logo" />
+            <a href="" class="logo-anchor">
+              <h1>Image<span class="color-changer">peak</span></h1>
+              <h2>Mountain of photos</h2>
+            </a>
+          </div>
+          <div class="services-box">
+            <div class="card">
+              <i class="far fa-images"></i>
+              <p>browse</p>
+            </div>
+            <div class="card">
+              <i class="fas fa-thumbs-up"></i>
+              <img src="" alt="" />
+              <p>rate</p>
+            </div>
+            <div class="card">
+              <i class="fas fa-camera"></i>
+              <p>add</p>
+            </div>
+            <div class="card">
+              <i class="fas fa-trophy"></i>
+              <p>climb</p>
+            </div>
+          </div>
+        </section>
+        <section class="right-section">
+          <div class="join-container">
+            <div class="form-container">
+              <div id="registerContainer">
+                <i class="fas fa-mountain"></i>
+                <div id="errorField"></div>
+                <h3>Sign up to browse, rate, and climb with your photos.</h3>
+                <form action="register" method="POST" id="registerForm">
+                    {% csrf_token %}
+                  <input type="hidden" id="csrf_token" value='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+                  <input type="text" placeholder="Username..." id="username" name="username"/>
+                  <input type="email" placeholder="Email..." id="email" name="email"/>
+                  <input type="password" placeholder="Password..." id="password" name="password"/>
+                  <label>
+                    <input type="checkbox" id="check" checked />
+                    I accept all terms.
+                  </label>
+                  <button class="signup-button">Signup</button>
+                </form>
+                <p class="terms-paragraph">
+                  By signing up, you agree to our <a href="terms">Terms</a>.
+                </p>
+              </div>
+              <div id="loginContainer" class="active">
+                <i class="fas fa-mountain"></i>
+                <div id="errorField"></div>
+                <h3>
+                  Sign in to browse, rate, and climb with your photos.
+                  <br />
+                  <br />Join our community today.
+                </h3>
+                <form action="login" method="POST" id="registerForm">
+                  {% csrf_token %}
+                  <input type="email" placeholder="Email..." id="email" name="email"/>
+                  <input
+                    type="password"
+                    placeholder="Password..."
+                    id="password"
+                    name="password"
+                  />
+                  <button class="signup-button">Signin</button>
+                </form>
+              </div>
+            </div>
+            <div class="have-account">
+              <p>Have an accout ?</p>
+              <p class="signin-anchor" id="switcher">sign in</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/static/scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4904b4dc8e.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+{% endblock %}
+</html>
