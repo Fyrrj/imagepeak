@@ -45,7 +45,7 @@
                   class="user-avatar"
                 />
               </div>
-              <p class="user-name">{{ requests.COOKIES.nickname }}</p>
+              <p class="user-name">{{ request.COOKIES.nickname }}</p>
               <div class="logout-btn">
                 <button>
                   <a href="logout">
@@ -58,78 +58,16 @@
         </nav>
         <header>
           <div class="ranking-records">
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
+            {% for key, value in col.items %} 
+              <div class="ranking-record">
+                <div class="other-user-place">{{ value.pos }}</div>
+                <div class="other-user-info">
                 <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Edyta</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
+                <p class="other-user-name">{{ key }}</p>
+                </div>
+              <div class="other-user-ranking-score">{{ value.val }}</div>
             </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Kornelia</p>
-              </div>
-              <div class="other-user-ranking-score">2341</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Janusz</p>
-              </div>
-              <div class="other-user-ranking-score">444</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Mateusz</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Norbert</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Dawid</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Edyta</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Edyta</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
-            <div class="ranking-record">
-              <div class="other-user-place">1</div>
-              <div class="other-user-info">
-                <img src="/static/img/avatar.png" alt="" />
-                <p class="other-user-name">Edyta</p>
-              </div>
-              <div class="other-user-ranking-score">7834</div>
-            </div>
+            {% endfor %}
           </div>
         </header>
       </main>

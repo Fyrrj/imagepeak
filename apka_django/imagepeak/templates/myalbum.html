@@ -65,23 +65,10 @@
                   {% for col in paths %}
                   <div class="picturesColumn">
                   {% for img in col %}
-
                     <img src="/static/img/{{ request.COOKIES.id }}/{{ img }}" alt="album"></img>
-                    <!-- <img src="/static/img/1/photo2.jpg" alt="album"></img>
-                    <img src="/static/img/1/photo3.jpg" alt="album"></img> -->
                     {% endfor %}
                   </div>
                   {% endfor %}
-                  <!-- <div class="picturesColumn">
-                    <img src="/static/img/1/photo4.jpg" alt="album"></img>
-                    <img src="/static/img/1/photo5.jpg" alt="album"></img>
-                    <img src="/static/img/1/photo6.jpg" alt="album"></img>
-                  </div>
-                  <div class="picturesColumn">
-                    <img src="/static/img/1/photo7.jpg" alt="album"></img>
-                    <img src="/static/img/1/photo8.jpg" alt="album"></img>
-                    <img src="/static/img/1/photo9.jpg" alt="album"></img>
-                  </div> -->
                 </div>
               </div>
         </header>
