@@ -74,7 +74,7 @@ main > nav .nav-content .logotype {
 
 .logotype h1 {
   font-family: "Lato", sans-serif;
-  font-size: 3rem;
+  font-size: 3.4rem;
   color: #2c8ffa;
   margin-left: 10px;
 }
@@ -171,7 +171,7 @@ main > nav .nav-content .user-section {
 
 .user-section p.user-name {
   font-family: "Alegreya Sans SC", sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #2c8ffa;
 }
@@ -249,6 +249,7 @@ main header {
   align-items: center;
   width: 100%;
   height: calc(100% - 100px);
+  overflow: hidden;
 }
 
 header > .public-gallery {
@@ -312,12 +313,12 @@ header > .public-gallery {
 }
 
 .public-gallery .image-modal {
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 22%;
-  height: 35%;
+  padding: 20px 10px;
   background-color: #0d203b;
   border: 2px solid #2c8ffa;
 }
@@ -330,7 +331,7 @@ header > .public-gallery {
   align-items: center;
   width: 100%;
   height: 50%;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .random-author-info img {
@@ -340,8 +341,9 @@ header > .public-gallery {
 
 .random-author-info p.author-name {
   font-family: "Alegreya Sans SC", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #2c8ffa;
+  font-weight: 700;
 }
 
 .random-author-info .post-time {
@@ -358,6 +360,13 @@ header > .public-gallery {
   height: 25px;
 }
 
+.random-author-info .post-time p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c8ffa;
+  margin-bottom: 2px;
+}
+
 .post-time p {
   margin: 0;
 }
@@ -372,13 +381,15 @@ header > .public-gallery {
   font-size: 1.6rem;
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  padding: 0 20px;
+  padding: 10px 20px;
   width: 100%;
 }
 
-.image-message p {
+.image-modal .image-message p {
   margin: 0;
-  text-align: center;
+  text-align: justify;
+  font-size: 1.6rem;
+  padding: 0 20px;
 }
 
 .image-modal .hash-and-score {
@@ -391,8 +402,19 @@ header > .public-gallery {
   font-size: 1.6rem;
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  padding: 0 20px;
+  padding: 10px 20px;
   width: 100%;
+}
+
+.image-modal .hash-and-score p {
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+.image-modal .hash-and-score p.active {
+  display: none;
 }
 
 .hash-and-score .score {
@@ -446,6 +468,22 @@ header {
   display: flex;
   width: 100%;
   position: relative;
+  overflow-y: scroll;
+}
+
+.picturesContainer::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0d203b;
+}
+
+.picturesContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.picturesContainer::-webkit-scrollbar-thumb {
+  background: #2c8ffa;
+  border-radius: 10px;
 }
 
 .picturesColumn {
@@ -531,6 +569,42 @@ header {
   color: #2c8ffa;
 }
 
+.photo-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.photo-information.active {
+  display: none;
+}
+
+.photo-information input {
+  padding: 10px 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1.6rem;
+  color: #2c8ffa;
+  margin-bottom: 20px;
+}
+
+.photo-information input.photo-message {
+  width: 400px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1.6rem;
+  color: #2c8ffa;
+  margin-bottom: 20px;
+}
+
+.photo-information input:focus {
+  border: 2px solid #2c8ffa;
+}
+
+.photo-information input::placeholder {
+  color: #0d203b;
+}
+
 /*ranking styles*/
 
 .ranking-records {
@@ -540,6 +614,7 @@ header {
   height: 90%;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .ranking-record {
@@ -562,7 +637,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gold;
+  background-color: #0d203b;
   color: #fff;
   border: 2px solid #fff;
   font-family: "Lato", sans-serif;
@@ -611,13 +686,126 @@ header {
   font-family: "Lato", sans-serif;
 }
 
+.ranking-records::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0d203b;
+}
+
+.ranking-records::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.ranking-records::-webkit-scrollbar-thumb {
+  background: #2c8ffa;
+  border-radius: 10px;
+}
+
 /*usersettings styles*/
 
 .change-section {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60%;
+  background-color: #0d203b;
+}
+
+.change-section.left {
+  width: 20%;
+  margin-right: 40px;
+}
+
+.change-section.right {
+  width: 30%;
+}
+
+.change-title {
+  width: 100%;
+  background-color: #2c8ffa;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  height: 60%;
+  font-family: "Lato", sans-serif;
+}
+
+.change-title i,
+p {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.change-title p {
+  font-size: 2rem;
+  margin: 0 0 0 20px;
+}
+
+.change-section .file-upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-section .file-upload__button {
+  margin: 40px 0;
+}
+
+.change-section .add-photo-btn {
+  margin: 40px 0;
+}
+
+.change-section.right #passwordChangeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.change-section #passwordChangeForm input {
+  padding: 10px 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1.6rem;
+  color: #2c8ffa;
+  margin-bottom: 20px;
+}
+
+.change-section #passwordChangeForm input:focus {
+  border: 2px solid #2c8ffa;
+}
+
+.change-section #passwordChangeForm input::placeholder {
+  color: #0d203b;
+}
+
+.change-section #passwordChangeForm button {
+  padding: 10px 20px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #2c8ffa;
+  margin-top: 20px;
+  border: 2px solid #fff;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.change-section #passwordChangeForm button:hover {
+  background-color: #fff;
+  color: #0d203b;
+  padding: 14px 24px;
+}
+
+.change-section #errorField {
+  font-family: "Lato", sans-serif;
+  color: red;
+  font-size: 1.6rem;
+  padding: 20px;
+  text-align: center;
+  font-weight: 700;
 }
