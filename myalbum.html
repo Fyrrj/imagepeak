@@ -57,9 +57,16 @@
         <header>
             <div class="albumBox">
                 <div className="addPictureArea">
-                  <button class="addBtn">
-                    add new photo
-                  </button>
+                  <!--Tutaj Mati zobacz czy ci pasi-->
+                 <form action="#" method="GET" enctype="multipart/form-data" class="add-photo-form">
+                  <div class="file-upload">
+                    <input class="file-upload__input" type="file" name="myFile[]" id="myFile" multiple>
+                    <button class="file-upload__button" type="button">Choose File(s)</button>
+                    <span class="file-upload__label"></span>
+                    <button type="submit" name="submit" class="add-photo-btn active" id="submitFileBtn">add new photo</button>
+                  </div>
+                 </form>
+                 
                 </div>
                 <div class="picturesContainer">
                   <div class="picturesColumn">
@@ -82,7 +89,7 @@
         </header>
       </main>
     </div>
-    <script src="/scripts/index.js"></script>
+    <script src="/scripts/myalbum.js"></script>
     <script
       src="https://kit.fontawesome.com/4904b4dc8e.js"
       crossorigin="anonymous"
