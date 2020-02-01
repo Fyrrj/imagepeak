@@ -12,6 +12,7 @@ from django.db.models import Count, Q
 from datetime import datetime
 import dateutil.relativedelta
 from django.conf import settings
+import os
 
 
 @csrf_exempt
@@ -21,12 +22,15 @@ def homepage(request):
 
 @csrf_exempt
 def my_album(request):
+    if 'nickname' not in request.COOKIES or 'id' not in request.COOKIES:
+        return redirect('/main')
     if request.method == 'POST':
         if len(request.FILES) != 0:
             file = request.FILES['myFile']
-            with open('{}{}/{}'.format(settings.MEDIA_URL, request.COOKIES['id'], file.name), 'wb+') as destination:
+            with open('{}\\{}\\{}'.format(os.getcwd()+'\\static\\img', request.COOKIES['id'], file.name), 'wb+') as destination:
                 for chunk in file.chunks():
                     destination.write(chunk)
+            Posts.objects.create(filename=file.name, user_id_id=request.COOKIES['id'], created_at=datetime.now())
     if 'nickname' not in request.COOKIES or 'id' not in request.COOKIES:
         return redirect('/main')
     else:
@@ -68,6 +72,21 @@ def ranking(request):
 
 @csrf_exempt
 def user_settings(request):
+    if request.method == 'POST':
+        if 'myFile' in request.POST and len(request.FILES) != 0:
+            file = request.FILES['myFile']
+            with open('{}\\{}\\{}'.format(os.getcwd() + '\\static\\img', request.COOKIES['id'], file.name),
+                      'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+            User.objects.filter(id=request.COOKIES['id']).update(user_image=file.name)
+        elif 'currentPassword' in request.POST and 'newPassword' in request.POST and 'repeatPassword' in request.POST:
+            if request.POST['newPassword'] == request.POST['repeatPassword']:
+                try:
+                    user = User.objects.get(id=request.COOKIES['id'], passwd=request.POST['currentPassword'])
+                    User.objects.filter(id=request.COOKIES['id']).update(passwd=request.POST['newPassword'])
+                except:
+                    pass
     if 'nickname' not in request.COOKIES or 'id' not in request.COOKIES:
         return redirect('/main')
     else:
@@ -80,6 +99,13 @@ def terms(request):
 
 @csrf_exempt
 def welcome(request):
+    if request.method == 'POST':
+        img_id = request.POST.get('image_id', False)
+        try:
+            Rating.objects.get(post_id_id=img_id, user_id_id=request.COOKIES['id'])
+        except:
+            Rating.objects.get_or_create(post_id_id=request.COOKIES['num'], user_id_id=request.COOKIES['id'],
+                                                file_desc='', created_at=datetime.now())
     if 'nickname' not in request.COOKIES or 'id' not in request.COOKIES:
         return redirect('/main')
     else:
@@ -106,24 +132,18 @@ def register(request):
         username = request.POST.get('username', False)
         password = request.POST.get('password', False)
         email = request.POST.get('email', False)
-        if User.objects.get(email__exact=email) is not None or User.objects.get(nickname__exact=username) is not None:
-            return render(request, "index.html")
-        else:
-            user = User.create(email=email, nickname=username, passwd=password)
-            user.save()
-            res = get_image_info(1)
-            result = render(request, "welcome.html", res)
-            if user.user_image != '':
-                result.set_cookie('user_image', "static/img/{}/{}".format(user.id, user.user_image))
-            else:
-                result.set_cookie('user_image', "/static/img/defaultAvatar.png")
-            result.set_cookie('nickname', user.nickname)
-            result.set_cookie('id', user.id)
-            result.set_cookie('num', res['qty'])
-            return result
+        User.objects.get_or_create(email=email, nickname=username, passwd=password)
+        user = User.objects.get(email=email, nickname=username, passwd=password)
+        res = get_image_info(1)
+        result = render(request, "welcome.html", res)
+        result.set_cookie('user_image', "/static/img/defaultAvatar.png")
+        result.set_cookie('nickname', user.nickname)
+        result.set_cookie('id', user.id)
+        result.set_cookie('num', res['qty'])
+        return result
     else:
         if 'nickname' in request.COOKIES and 'id' in request.COOKIES:
-            res = get_image_info(request.COOKIES.num)
+            res = get_image_info(request.COOKIES['num'])
             return render(request, "welcome.html", res)
         return render(request, "index.html")
 
@@ -139,9 +159,9 @@ def login_action(request):
                 res = get_image_info(1)
                 result = render(request, "welcome.html", res)
                 if user.user_image != '':
-                    result.set_cookie('user_image', "static/img/{}/{}".format(user.id, user.user_image))
+                    result.set_cookie('user_image', 'static/img/{}/{}'.format(user.id, user.user_image))
                 else:
-                    result.set_cookie('user_image', "/static/img/defaultAvatar.png")
+                    result.set_cookie('user_image', '/static/img/defaultAvatar.png')
                 result.set_cookie('nickname', user.nickname)
                 result.set_cookie('id', user.id)
                 result.set_cookie('num', res['qty'])
@@ -181,16 +201,10 @@ def handler500(request):
 
 
 def get_image_info(number):
-    if isinstance(number, int):
-        if number < 1:
-            number = 1
-        else:
-            pass
+    if int(number) < 1:
+        number = 1
     else:
-        try:
-            number = int(number)
-        except:
-            number = 1
+        number = int(number)+1
     p = Posts.objects.order_by('-id')[:number]
     res = p[0]
     if number > len(p):
@@ -227,7 +241,7 @@ def get_image_info(number):
         usr_img = "static/img/{}/{}".format(u.id, u.user_image)
     else:
         usr_img = "/static/img/avatar.png"
-    result = {'p': res, 'u': u, 't': tags, 'r': rate, 'now': timer, 'qty': number+1, 'usr_img': usr_img}
+    result = {'p': res, 'u': u, 't': tags, 'r': rate, 'now': timer, 'qty': number, 'usr_img': usr_img, 'img_id': res.id}
     return result
 
 

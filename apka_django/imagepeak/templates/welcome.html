@@ -1,3 +1,123 @@
+{##}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#  <head>#}
+{#    <meta charset="UTF-8" />#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0" />#}
+{#    <meta http-equiv="X-UA-Compatible" content="ie=edge" />#}
+{#    <link rel="stylesheet" href="/static/styles/signin.css" />#}
+{#    <link#}
+{#      href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700|Lato:300,400,700&display=swap&subset=latin-ext"#}
+{#      rel="stylesheet"#}
+{#    />#}
+{#    <title>Imagepeak</title>#}
+{#  </head>#}
+{#  <body>#}
+{#    <div class="wrap">#}
+{#      <main>#}
+{#        <nav>#}
+{#          <div class="nav-content">#}
+{#            <div class="logotype">#}
+{#              <img src="/static/img/logo.png" alt="site logotype" class="logo" />#}
+{#              <a href="welcome" class="logo-anchor"#}
+{#                ><h1>Image<span>peak</span></h1></a#}
+{#              >#}
+{#            </div>#}
+{#            <div class="navigation-section">#}
+{#              <ul>#}
+{#                <li>#}
+{#                  <i class="fas fa-portrait"></i#}
+{#                  ><a href="myalbum">my album</a>#}
+{#                </li>#}
+{#                <li>#}
+{#                  <i class="fas fa-medal"></i><a href="ranking">ranking</a>#}
+{#                </li>#}
+{#                <li>#}
+{#                  <i class="fas fa-user-cog"></i#}
+{#                  ><a href="usersettings">account</a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
+{#            <div class="user-section">#}
+{#              <div class="avatar-container">#}
+{#                <img#}
+{#                  src={{ request.COOKIES.user_image }}#}
+{#                  alt="user-avatar"#}
+{#                  class="user-avatar"#}
+{#                />#}
+{#              </div>#}
+{#              <p class="user-name">{{ requests.COOKIES.nickname }}</p>#}
+{#              <div class="notifications">#}
+{#                <i class="fas fa-bell"></i>#}
+{#                <div class="notification-count"><p>1</p></div>#}
+{#              </div>#}
+{#              <div class="logout-btn">#}
+{#                <button>#}
+{#                  <a href="logout">#}
+{#                    <i class="fas fa-sign-out-alt"></i>#}
+{#                  </a>#}
+{#                </button>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </nav>#}
+{#        <header>#}
+{#          <div class="public-gallery">#}
+{#            <div class="image-slider">#}
+{#              <img src="/static/img/{{ u.id }}/{{ p.filename }}" alt="" />#}
+{#              <div class="rate-bar">#}
+{#                <button class="plus-one-btn rate-btn">#}
+{#                  <i class="fas fa-thumbs-up"></i>#}
+{#                </button>#}
+{#                <button class="skip-btn rate-btn" onclick="location.href='/welcome'">#}
+{#                  <i class="fas fa-hand-point-right"></i>#}
+{#                </button>#}
+{#              </div>#}
+{#            </div>#}
+{#            <div class="image-modal">#}
+{#              <div class="random-author-info">#}
+{#                <div class="author-avatar">#}
+{#                  <img style="border-radius: 50%" src={{ usr_img }} alt="" />#}
+{#                </div>#}
+{#                <p class="author-name">#}
+{#                  {{ u.nickname }}#}
+{#                </p>#}
+{#                <div class="post-time">#}
+{#                  <p>#}
+{#                    {{ now }}#}
+{#                  </p>#}
+{#                </div>#}
+{#              </div>#}
+{#              <div class="image-message">#}
+{#                <p>#}
+{#                  {{ p.file_desc }}#}
+{#                </p>#}
+{#              </div>#}
+{#              <div class="hash-and-score">#}
+{#                <p>{% for i in t %}#}
+{#                  {{ i }}#}
+{#                  {% endfor %}#}
+{#                </p>#}
+{#                <i class="fas fa-trophy"></i>#}
+{#                <div class="score">#}
+{#                  <p>{{ r }}</p>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{#        </header>#}
+{#      </main>#}
+{#    </div>#}
+{#    <script src="/static/scripts/index.js"></script>#}
+{#    <script#}
+{#      src="https://kit.fontawesome.com/4904b4dc8e.js"#}
+{#      crossorigin="anonymous"#}
+{#    ></script>#}
+{#  </body>#}
+{#</html>#}
+{##}
+{##}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,13 +167,9 @@
                 />
               </div>
               <p class="user-name">{{ requests.COOKIES.nickname }}</p>
-              <div class="notifications">
-                <i class="fas fa-bell"></i>
-                <div class="notification-count"><p>1</p></div>
-              </div>
               <div class="logout-btn">
                 <button>
-                  <a href="logout">
+                  <a href="main">
                     <i class="fas fa-sign-out-alt"></i>
                   </a>
                 </button>
@@ -66,9 +182,13 @@
             <div class="image-slider">
               <img src="/static/img/{{ u.id }}/{{ p.filename }}" alt="" />
               <div class="rate-bar">
-                <button class="plus-one-btn rate-btn">
-                  <i class="fas fa-thumbs-up"></i>
-                </button>
+                <!--form action sprawdź-->
+                <form action="welcome" method="POST" id="rankForm">
+                    <input type="hidden" id="img_id" value='{{ img_id }}'>
+                  <button class="plus-one-btn rate-btn" type="submit">
+                    <i class="fas fa-thumbs-up"></i>
+                  </button>
+                </form>
                 <button class="skip-btn rate-btn" onclick="location.href='/welcome'">
                   <i class="fas fa-hand-point-right"></i>
                 </button>
@@ -108,7 +228,7 @@
         </header>
       </main>
     </div>
-    <script src="/static/scripts/index.js"></script>
+    <script src="/static/scripts/welcome.js"></script>
     <script
       src="https://kit.fontawesome.com/4904b4dc8e.js"
       crossorigin="anonymous"

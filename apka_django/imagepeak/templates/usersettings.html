@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,7 +19,7 @@
           <div class="nav-content">
             <div class="logotype">
               <img src="/static/img/logo.png" alt="site logotype" class="logo" />
-              <a href="welcome" class="logo-anchor"
+              <a href="welcome.html" class="logo-anchor"
                 ><h1>Image<span>peak</span></h1></a
               >
             </div>
@@ -45,7 +46,7 @@
                   class="user-avatar"
                 />
               </div>
-              <p class="user-name">{{ requests.COOKIES.nickname }}</p>
+              <p class="user-name">{{ request.COOKIES.nickname }}</p>
               <div class="logout-btn">
                 <button>
                   <a href="logout">
@@ -57,34 +58,43 @@
           </div>
         </nav>
         <header>
-          <section class="change-section">
+          <section class="change-section left">
             <div class="change-title">
               <i class="fas fa-person-booth"></i>
               <p>update avatar</p>
             </div>
             <div class="add-new-avatar">
-              <i class="fas fa-folder-plus"></i>
+              <form action="usersettings" method="POST" enctype="multipart/form-data" class="add-photo-form">
+                <div class="file-upload">
+                  <input class="file-upload__input" type="file" name="myFile" id="myFile" multiple>
+                  <button class="file-upload__button" type="button">Choose File(s)</button>
+                  <span class="file-upload__label"></span>
+                  <button type="submit" name="submit" class="add-photo-btn active" id="submitFileBtn">update avatar</button>
+                </div>
+               </form>
             </div>
-            <button>save</button>
           </section>
-          <section class="change-section">
+          <section class="change-section right">
             <div class="change-title">
               <i class="fas fa-unlock-alt"></i>
               <p>change password</p>
             </div>
-            <form action="">
-              <label for="current-password">Current password:</label>
-              <input type="password" id="current-password" />
-              <label for="new-password">New password:</label>
-              <input type="password" id="new-password" />
-              <label for="repeat-new-password">Repeat new password:</label>
-              <input type="password" id="repeat-new-password" />
-              <button>save</button>
+            <form action="usersettings" method="POST" id="passwordChangeForm">
+              <div id="errorField"></div>
+              <input type="password" placeholder="Current password..." id="currentPassword" name="currentPassword"/>
+              <input type="password" placeholder="New password..." id="newPassword" name="newPassword"/>
+              <input
+                type="password"
+                placeholder="Repeat new password..."
+                id="repeatPassword"
+                name="repeatPassword"
+              />
+              <button class="password-change-button">Save</button>
             </form>
         </header>
       </main>
     </div>
-    <script src="/static/scripts/index.js"></script>
+    <script src="/static/scripts/usersettings.js"></script>
     <script
       src="https://kit.fontawesome.com/4904b4dc8e.js"
       crossorigin="anonymous"
